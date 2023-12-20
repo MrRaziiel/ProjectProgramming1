@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sua Loja de Jogos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em;
+        }
+
+        nav {
+            background-color: #444;
+            padding: 0.5em;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 1em;
+            margin: 0 10px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            background-color: #555;
+            border-radius: 5px;
+        }
+
+        section {
+            margin: 20px;
+        }
+
+        .game {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 10px;
+            background-color: #fff;
+            border-radius: 5px;
+            display: inline-block;
+            width: 200px;
+            text-align: center;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+          /* Seu CSS existente aqui */
+
+        /* Estilos para modais */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Sua Loja de Jogos</h1>
+    </header>
+
+    <nav>
+        <a href="#">Início</a>
+        <a href="#">Jogos</a>
+        <a href="#">Contato</a>
+        <a href="#" id="loginBtn">Login</a>
+        <a href="#" id="signupBtn">Registrar</a>
+    </nav>
+
+    <section>
+        <div class="game">
+            <h2>Jogo 1</h2>
+            <p>Descrição do Jogo 1.</p>
+            <p>Preço: $19.99</p>
+            <button>Comprar</button>
+        </div>
+
+        <div class="game">
+            <h2>Jogo 2</h2>
+            <p>Descrição do Jogo 2.</p>
+            <p>Preço: $24.99</p>
+            <button>Comprar</button>
+        </div>
+
+        <!-- Adicione mais jogos conforme necessário -->
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Sua Loja de Jogos. Todos os direitos reservados.</p>
+    </footer>
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="loginClose">&times;</span>
+            <h2>Login</h2>
+            <form>
+                <label for="username">Usuário:</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="password">Senha:</label>
+                <input type="password" id="password" name="password" required>
+
+                <button type="button" onclick="performLogin()">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal de Registro -->
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="signupClose">&times;</span>
+            <h2>Registrar</h2>
+            <form>
+                <label for="newUsername">Novo Usuário:</label>
+                <input type="text" id="newUsername" name="newUsername" required>
+
+                <label for="newPassword">Nova Senha:</label>
+                <input type="password" id="newPassword" name="newPassword" required>
+
+                <button type="button" onclick="performSignup()">Registrar</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        // Seu código JavaScript existente...
+
+        // Funções para exibir/fechar modais
+        var loginModal = document.getElementById('loginModal');
+        var signupModal = document.getElementById('signupModal');
+        var loginBtn = document.getElementById('loginBtn');
+        var signupBtn = document.getElementById('signupBtn');
+        var loginClose = document.getElementById('loginClose');
+        var signupClose = document.getElementById('signupClose');
+
+        loginBtn.onclick = function() {
+            loginModal.style.display = 'block';
+        }
+
+        signupBtn.onclick = function() {
+            signupModal.style.display = 'block';
+        }
+
+        loginClose.onclick = function() {
+            loginModal.style.display = 'none';
+        }
+
+        signupClose.onclick = function() {
+            signupModal.style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            if (event.target == loginModal) {
+                loginModal.style.display = 'none';
+            }
+
+            if (event.target == signupModal) {
+                signupModal.style.display = 'none';
+            }
+        }
+
+        function performLogin() {
+            // Lógica de login aqui (pode ser enviada para o backend)
+            alert('Lógica de login aqui');
+        }
+
+        function performSignup() {
+            // Lógica de registro aqui (pode ser enviada para o backend)
+            alert('Lógica de registro aqui');
+        }
+    </script>
+</body>
+</html>
