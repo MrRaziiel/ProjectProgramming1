@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sua Loja de Jogos</title>
+    <title>Your Game Store</title>
+    <!-- Add Bootstrap CSS link -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -62,21 +64,8 @@
             bottom: 0;
             width: 100%;
         }
-          /* Seu CSS existente aqui */
 
-        /* Estilos para modais */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0,0,0,0.4);
-        }
-
+        /* Additional Bootstrap styles for modals */
         .modal-content {
             background-color: #fefefe;
             margin: 5% auto;
@@ -84,93 +73,111 @@
             border: 1px solid #888;
             width: 80%;
         }
-
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
-
-        .close:hover,
-        .close:focus {
-            color: black;
-            text-decoration: none;
-            cursor: pointer;
-        }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Sua Loja de Jogos</h1>
+    <header class="bg-dark text-white">
+        <h1>Raziel Game Store</h1>
     </header>
 
-    <nav>
-        <a href="#">Início</a>
-        <a href="Games.html">Jogos</a>
-        <a href="#">Contato</a>
-        <a href="#">Carrinho</a>
-        <a href="#" id="loginBtn">Login</a>
-        <a href="#" id="signupBtn">Registrar</a>
+    <nav class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Home</a>
+        <a class="navbar-brand" href="#Games">Games</a>
+        <a class="navbar-brand" href="#">Contact</a>
+        <a class="navbar-brand" href="#">Cart</a>
+        <a class="navbar-brand" href="#" id="loginBtn">Login</a>
+        <a class="navbar-brand" href="#" id="signupBtn">Register</a>
     </nav>
 
     <section>
         <div class="game">
-            <h2>Jogo 1</h2>
-            <p>Descrição do Jogo 1.</p>
-            <p>Preço: $19.99</p>
-            <button>Comprar</button>
+            <h2>Game 1</h2>
+            <p>Game 1 Description.</p>
+            <p>Price: $19.99</p>
+            <button class="btn btn-primary">Buy</button>
         </div>
 
         <div class="game">
-            <h2>Jogo 2</h2>
-            <p>Descrição do Jogo 2.</p>
-            <p>Preço: $24.99</p>
-            <button>Comprar</button>
+            <h2>Game 2</h2>
+            <p>Game 2 Description.</p>
+            <p>Price: $24.99</p>
+            <button class="btn btn-primary">Buy</button>
         </div>
 
-          <!-- Adicione mais jogos conforme necessário -->
+        <!-- Add more games as needed -->
     </section>
 
-    <footer>
-        <p>&copy; 2023 Sua Loja de Jogos. Todos os direitos reservados.</p>
+    <footer class="bg-dark text-white">
+        <p>&copy; 2024 Raziel Game Store. All rights reserved.</p>
     </footer>
-    <div id="loginModal" class="modal">
-        <div class="modal-content">
-            <span class="close" id="loginClose">&times;</span>
-            <h2>Login</h2>
-            <form>
-                <label for="username">Usuário:</label>
-                <input type="text" id="username" name="username" required>
 
-                <label for="password">Senha:</label>
-                <input type="password" id="password" name="password" required>
+    <!-- Login Modal -->
+    <div class="modal" id="loginModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Login</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="username">Username:</label>
+                            <input type="text" class="form-control" id="username" name="username" required>
+                        </div>
 
-                <button type="button" onclick="performLogin()">Login</button>
-            </form>
+                        <div class="form-group">
+                            <label for="password">Password:</label>
+                            <input type="password" class="form-control" id="password" name="password" required>
+                        </div>
+
+                        <button type="button" class="btn btn-primary" onclick="performLogin()">Login</button>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
 
-    <!-- Modal de Registro -->
-    <div id="signupModal" class="modal">
-        <div class="modal-content">
-            <span class="close" id="signupClose">&times;</span>
-            <h2>Registrar</h2>
-            <form>
-                <label for="newUsername">Novo Usuário:</label>
-                <input type="text" id="newUsername" name="newUsername" required>
+    <!-- Signup Modal -->
+    <div class="modal" id="signupModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Register</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="newUsername">New Username:</label>
+                            <input type="text" class="form-control" id="newUsername" name="newUsername" required>
+                        </div>
 
-                <label for="newPassword">Nova Senha:</label>
-                <input type="password" id="newPassword" name="newPassword" required>
+                        <div class="form-group">
+                            <label for="newPassword">New Password:</label>
+                            <input type="password" class="form-control" id="newPassword" name="newPassword" required>
+                        </div>
 
-                <button type="button" onclick="performSignup()">Registrar</button>
-            </form>
+                        <button type="button" class="btn btn-primary" onclick="performSignup()">Register</button>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
+
+    <!-- Add Bootstrap JS and jQuery links -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
     <script>
-        // Seu código JavaScript existente...
+        // Your existing JavaScript code...
 
-        // Funções para exibir/fechar modais
+        // Functions to display/close modals
         var loginModal = document.getElementById('loginModal');
         var signupModal = document.getElementById('signupModal');
         var loginBtn = document.getElementById('loginBtn');
@@ -179,39 +186,40 @@
         var signupClose = document.getElementById('signupClose');
 
         loginBtn.onclick = function() {
-            loginModal.style.display = 'block';
+            $('#loginModal').modal('show');
         }
 
         signupBtn.onclick = function() {
-            signupModal.style.display = 'block';
+            $('#signupModal').modal('show');
         }
 
         loginClose.onclick = function() {
-            loginModal.style.display = 'none';
+            $('#loginModal').modal('hide');
         }
 
         signupClose.onclick = function() {
-            signupModal.style.display = 'none';
+            $('#signupModal').modal('hide');
         }
 
+        // Close modals if clicked outside the modal
         window.onclick = function(event) {
             if (event.target == loginModal) {
-                loginModal.style.display = 'none';
+                $('#loginModal').modal('hide');
             }
 
             if (event.target == signupModal) {
-                signupModal.style.display = 'none';
+                $('#signupModal').modal('hide');
             }
         }
 
         function performLogin() {
-            // Lógica de login aqui (pode ser enviada para o backend)
-            alert('Lógica de login aqui');
+            // Login logic here (can be sent to the backend)
+            alert('Login logic here');
         }
 
         function performSignup() {
-            // Lógica de registro aqui (pode ser enviada para o backend)
-            alert('Lógica de registro aqui');
+            // Register logic here (can be sent to the backend)
+            alert('Register logic here');
         }
     </script>
 </body>
