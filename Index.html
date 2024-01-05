@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Game Store</title>
+    <title>Raziel Game Store</title>
     <!-- Add Bootstrap CSS link -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
@@ -17,42 +17,23 @@
         header {
             background-color: #333;
             color: white;
-            text-align: center;
             padding: 1em;
         }
 
         nav {
             background-color: #444;
-            padding: 0.5em;
             text-align: center;
         }
 
         nav a {
             color: white;
             text-decoration: none;
-            padding: 1em;
-            margin: 0 10px;
             font-weight: bold;
         }
 
         nav a:hover {
             background-color: #555;
             border-radius: 5px;
-        }
-
-        section {
-            margin: 20px;
-        }
-
-        .game {
-            border: 1px solid #ddd;
-            padding: 10px;
-            margin: 10px;
-            background-color: #fff;
-            border-radius: 5px;
-            display: inline-block;
-            width: 200px;
-            text-align: center;
         }
 
         footer {
@@ -73,39 +54,59 @@
             border: 1px solid #888;
             width: 80%;
         }
+        .container {
+        margin-left: 0!important;
+        margin-right: 0!important;
+        }
+        
     </style>
 </head>
 <body>
     <header class="bg-dark text-white">
-        <h1>Raziel Game Store</h1>
+        <div class="row">
+            <div class="col"  >
+                <nav class="navbar navbar-expand-lg navbar-dark bg-dark" >
+                        <img src= "Resources\Images\Logo.png" width="100" height="100" alt="Round Image" class="rounded-circle shadow-4-strong img-fluid" alt="avatar1" style="float: right;">
+                </nav>
+                
+            </div>
+            <div class="col">
+                <h1 style="text-align:center;" >Raziel Game Store</h1>
+            </div>
+            <div class="col" style="text-align:right;">
+                <a class="navbar-brand" href="#" id="loginBtn">Login</a>
+                <a class="navbar-brand" href="#" id="signupBtn">Register</a>
+            </div>
+        
+        </div>
     </header>
+    
 
-    <nav class="navbar navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Home</a>
-        <a class="navbar-brand" href="#Games">Games</a>
-        <a class="navbar-brand" href="#">Contact</a>
-        <a class="navbar-brand" href="#">Cart</a>
-        <a class="navbar-brand" href="#" id="loginBtn">Login</a>
-        <a class="navbar-brand" href="#" id="signupBtn">Register</a>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark" >
+            <div class="container">
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+        
+              <div class="collapse navbar-collapse" id="navbarNavDropdown" >
+                    <ul class="navbar-nav">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                                <span class="navbar-toggler-icon" style="float: left;"></span>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="javascript:void(0);" onclick="loadContent('Welcome')">Home</a>
+                                <a class="dropdown-item" href="javascript:void(0);" onclick="loadContent('Games')">GAMES</a>
+                                <a class="dropdown-item" href="#">CART</a>
+                                <a class="dropdown-item" href="#">Contact</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
     </nav>
-
-    <section>
-        <div class="game">
-            <h2>Game 1</h2>
-            <p>Game 1 Description.</p>
-            <p>Price: $19.99</p>
-            <button class="btn btn-primary">Buy</button>
-        </div>
-
-        <div class="game">
-            <h2>Game 2</h2>
-            <p>Game 2 Description.</p>
-            <p>Price: $24.99</p>
-            <button class="btn btn-primary">Buy</button>
-        </div>
-
-        <!-- Add more games as needed -->
-    </section>
+        <iframe id="content" class="content" style="width: 100%; height: 100vh;" frameborder="0" src="Welcome.html"></iframe>
 
     <footer class="bg-dark text-white">
         <p>&copy; 2024 Raziel Game Store. All rights reserved.</p>
@@ -220,6 +221,15 @@
         function performSignup() {
             // Register logic here (can be sent to the backend)
             alert('Register logic here');
+        }
+    </script>
+
+    <script>
+        function loadContent(pageName) {
+            var iframe = document.getElementById("content");
+
+            // Set the src attribute of the iframe to load the HTML content
+            iframe.src = pageName + ".html";
         }
     </script>
 </body>
