@@ -5,27 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="Style/ProfileStyle.Css">
-    <title>Game Store</title>
+
     <style>
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-            display: flex;
-            justify-content: space-between;
+        body {
+            background-color: #f8f9fa;
         }
 
-        .left-section {
-            flex: 1;
+        .row {
+            margin: 0; /* Remove default margin */
         }
 
-        .right-section {
-            flex-basis: 30%;
-            background-color: #ffffff;
-            padding: 20px;
-            border-radius: 10px;
+        
+        .box {
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            margin: 10px;
+            padding: 10px;
         }
 
         .countdown {
@@ -33,32 +28,35 @@
             font-weight: bold;
             color: #e4341d;
             margin-bottom: 20px;
+            text-align: center;
         }
 
         .sale-propaganda {
             text-align: center;
-            color: #000000;
+            color: black;
             font-size: 18px;
             font-weight: bold;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="left-section">
-            <h1 class="display-4">Bem-vindo à Nossa Loja de Jogos</h1>
-            <p class="lead">Descubra uma vasta coleção de jogos emocionantes. Oferecemos os melhores títulos e as últimas novidades do mundo dos games. Encontre o seu próximo jogo favorito conosco!</p>
-        </div>
-
-        <div class="right-section">
-            <div class="countdown">
-                <p class="lead" style="text-align: center;">Oferta Especial Termina em:</p>
-                <div id="countdownTimer" style="text-align: center;"></div>
+    <div>
+        <div class="row">
+            <div class="col-md-8 box">
+                <h1 class="display-4">Bem-vindo à Nossa Loja de Jogos</h1>
+                <p class="lead">Descubra uma vasta coleção de jogos emocionantes para todas as plataformas. Oferecemos os melhores títulos e as últimas novidades do mundo dos games. Encontre o seu próximo jogo favorito conosco!</p>
             </div>
 
-            <div class="sale-propaganda">
-                <p class="lead">Grande Venda! Até 50% de Desconto em Jogos Selecionados.</p>
-                <button class="btn btn-primary profile-button" type="button" id="saveProfile">JOGOS</button>
+            <div class="col-md-2 box">
+                <div class="countdown">
+                    <p class="lead">Oferta Especial Termina em:</p>
+                    <div id="countdownTimer"></div>
+                </div>
+
+                <div class="sale-propaganda">
+                    <p class="lead">Grande Venda! Até 50% de Desconto em Jogos Selecionados.</p>
+                    <button class="btn btn-primary profile-button" type="button" id="saveProfile">JOGOS</button>
+                </div>
             </div>
         </div>
     </div>

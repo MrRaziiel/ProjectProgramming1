@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="Style/ProfileStyle.Css">
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
         .game img {
             width: 150px;
@@ -12,51 +14,42 @@
 </head>
 <body>
     <nav class="navbar navbar-expand">
-        <!-- Original Game Template -->
         <div class="game" id="gameTemplate" style="display: none;">
             <h2>Game Title</h2>
             <p>Game Description.</p>
             <img src="Resources\Images\Logo.png" alt="Round Image" class="rounded" alt="avatar1" />
             <p>PREÇO: 19.99€</p>
-            <button class="btn btn-primary" type="button">Ve mais</button>
-            <button class="btn btn-primary" type="button">COMPRA</button>
+            <button class="btn btn-primary profile-button" type="button">Ve mais</button>
+            <button class="btn btn-primary profile-button" type="button">COMPRA</button>
         </div>
 
-        <!-- Container for Dynamic Game Divs -->
         <div id="gameContainer"></div>
     </nav>
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            // Get the template div
             var gameTemplate = document.getElementById('gameTemplate');
     
-            // Get the container where dynamic divs will be added
             var gameContainer = document.getElementById('gameContainer');
     
-            // Array of text content for each dynamic div
             var gameData = [
                 { title: 'JOGO 1', description: 'MELHOR JOGO DE SEMPRE DE TIROS', price: '19.99€', imageUrl: 'Resources\\Images\\CS2.jpg' },
                 { title: 'JOGO 2', price: '24.99€', imageUrl: 'Resources\\Images\\Logo.png' },
                 { title: 'JOGO 3', description: 'MELHOR JOGO DE SEMPRE DE RPG', price: '24.99€', imageUrl: 'Resources\\Images\\Age_Of_Empires.jfif' },
                 { title: 'JOGO 4', description: 'MELHOR JOGO DE SEMPRE DE RPG', price: '24.99€' },
                 { title: 'JOGO 5', description: 'MELHOR JOGO DE SEMPRE DE ROGELIKE', price: '33.99€', imageUrl: 'Resources\\Images\\The_Binding_Of_Issac.jpg' },
-                // Add more game data as needed
             ];
            
     
-            // Function to create a dynamic div with specified data and append it to the container
             function createDynamicGameDiv(game) {
-                // Check if the template exists
                 if (!gameTemplate) {
                     console.error("Game template not found.");
                     return;
                 }
     
                 var clonedDiv = gameTemplate.cloneNode(true);
-                clonedDiv.style.display = ''; // Make sure to display the cloned div
+                clonedDiv.style.display = ''; 
     
-                // Set content for the cloned div
                 var h2Element = clonedDiv.querySelector('h2');
                 var pElements = clonedDiv.querySelectorAll('p');
                 var imgElement = clonedDiv.querySelector('img');
@@ -82,7 +75,6 @@
             return inputString === null || inputString === undefined || !isNaN(inputString);
         }
     
-            // Create dynamic divs with different data
             gameData.forEach(function (game) {
                 createDynamicGameDiv(game);
                  

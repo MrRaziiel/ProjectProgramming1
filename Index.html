@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Raziel Game Store</title>
-    <!-- Add Bootstrap CSS link -->
     <link
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
       rel="stylesheet"
@@ -49,7 +48,6 @@
         width: 100%;
       }
 
-      /* Additional Bootstrap styles for modals */
       .modal-content {
         background-color: #fefefe;
         margin: 5% auto;
@@ -118,7 +116,7 @@
                       <a
                         class="dropdown-item"
                         href="javascript:void(0);"
-                        onclick="loadContent('Games')"
+                        onclick="loadContent('Contactos')"
                         >CONTACTOS</a
                       >
                     </div>
@@ -138,7 +136,7 @@
           </nav>
         </div>
         <div class="col">
-          <h1 style="text-align: center">Raziel Game Store</h1>
+          <h1 style="text-align: center">RAZIEL GAMES STORE</h1>
         </div>
         <div class="col" style="text-align: right">
             <a class="navbar-brand" href="#" id="loginBtn">
@@ -167,10 +165,12 @@
     ></iframe>
 
     <footer class="bg-dark text-white">
-      <p>&copy; 2024 Raziel Game Store. All rights reserved.</p>
+      <p>&copy; 2024 Raziel Game Store. <a
+        href="javascript:void(0);"
+        onclick="loadContent('troll')"
+        > All rights reserved.</a>
     </footer>
 
-    <!-- Login Modal -->
     <div class="modal" id="loginModal">
         
       <div class="modal-dialog">
@@ -227,7 +227,6 @@
       </div>
     </div>
 
-    <!-- Signup Modal -->
     <div class="modal" id="signupModal">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -291,15 +290,12 @@
       </div>
     </div>
 
-    <!-- Add Bootstrap JS and jQuery links -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <script>
-      // Your existing JavaScript code...
 
-      // Functions to display/close modals
       var loginModal = document.getElementById("loginModal");
       var signupModal = document.getElementById("signupModal");
       var loginBtn = document.getElementById("loginBtn");
@@ -322,7 +318,6 @@
       };
 
 
-      // Close modals if clicked outside the modal
       window.onclick = function (event) {
         if (event.target == loginModal) {
           $("#loginModal").modal("hide");
@@ -334,21 +329,20 @@
       };
 
       function performLogin() {
-        // Login logic here (can be sent to the backend)
-        //  Get info about the user
+
             var FormLogin = document.getElementById("Login_Form");
 
-            // Accessing form controls and retrieving values
+
             var email_username = FormLogin.elements["email_username"].value;
             var password = FormLogin.elements["password"].value;
 
-            // Displaying information (you can do anything you want with the information)
+
 
             
 
             if (email_username == "admin@gmail.com" && password == "admin")
             {   
-                // Displaying information of the user in a alert, when is oficial [Remove])
+              
                 alert("email username: " + email_username + "\nPassword: " + password);
                 $("#loginModal").modal("hide");
                 changeIcon();
@@ -361,33 +355,27 @@
 
         function changeIcon() {
 
-    // Create a new SVG element with a different icon
-// Replace the existing SVG creation with an image element
+
 var newImg = document.createElement("img");
-newImg.setAttribute("src", "Resources\\Images\\ImageLogin.jpg"); // Replace with the path to your image
-newImg.setAttribute("alt", "Round Image"); // Provide alternative text for accessibility
-newImg.setAttribute("alt", "avatar1"); // Provide alternative text for accessibility
-newImg.setAttribute("fill", "currentColor"); // Provide alternative text for accessibility
-newImg.setAttribute("class", "rounded-circle shadow-4-strong img-fluid"); // Provide alternative text for accessibility
-newImg.setAttribute("float", "right"); // Provide alternative text for accessibility
-newImg.setAttribute("width", "9%"); // Provide alternative text for accessibility
+newImg.setAttribute("src", "Resources\\Images\\ImageLogin.jpg"); 
+newImg.setAttribute("alt", "Round Image");
+newImg.setAttribute("alt", "avatar1"); 
+newImg.setAttribute("fill", "currentColor"); 
+newImg.setAttribute("class", "rounded-circle shadow-4-strong img-fluid");
+newImg.setAttribute("float", "right"); 
+newImg.setAttribute("width", "9%"); 
 
 
                   
-// Create a hyperlink around the new image element
 var newLink = document.createElement("a");
 
-// Append the new image element to the hyperlink
 newLink.appendChild(newImg);
 
-// Replace the existing content of loginBtn with the new hyperlink
 loginBtn.innerHTML = '';
 loginBtn.appendChild(newLink);
 
-// Add the new action (e.g., loadContent for 'Profile') when the icon is clicked
 loginBtn.onclick = function () {
   loadContent('Profile');
-  // Add any additional logic you need
 };
   }
 
@@ -397,10 +385,8 @@ loginBtn.onclick = function () {
 
 
       function performSignup() {
-        // Register logic here (can be sent to the backend)
         var FormSign = document.getElementById("Signin_Form");
 
-        // Accessing form controls and retrieving values
         var new_email_username = FormSign.elements["new_email_username"].value;
         var new_password = FormSign.elements["new_password"].value;
         var new_password_confirm = FormSign.elements["new_password_confirm"].value;
@@ -410,7 +396,6 @@ loginBtn.onclick = function () {
             return
         }
 
-        // if new_password and new_password_confirm is equals
 
         if (isValidEmail(new_email_username))
         {
@@ -435,15 +420,12 @@ loginBtn.onclick = function () {
         }
         
         
-        // if not new_password and new_password_confirm is equals 
         function validatepassword(senha) {
-        // Pelo menos 8 caracteres, pelo menos 1 número, pelo menos 1 caractere especial, pelo menos 1 letra maiúscula
         var regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&.])[A-Za-z\d@$!%*?&.]{8,}$/;
 
         return regex.test(senha);
         }
         function isValidEmail(email) {
-        // Regular expression for a more strict email validation
         var emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
         return emailRegex.test(email);
         }
@@ -454,7 +436,6 @@ loginBtn.onclick = function () {
       function loadContent(pageName) {
         var iframe = document.getElementById("content");
 
-        // Set the src attribute of the iframe to load the HTML content
         iframe.src = pageName + ".html";
       }
     </script>
