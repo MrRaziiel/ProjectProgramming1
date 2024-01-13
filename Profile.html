@@ -1,0 +1,59 @@
+<html>
+    <link rel="stylesheet" href="Style/ProfileStyle.Css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" rel="stylesheet">
+    
+<div class="container rounded mt-5 mb-5">
+    <div class="row">
+        <div class="game">
+            <h1 class="text-black-10">Profile</h1>
+
+            <div class="d-flex flex-column align-items-center text-center"><img class="rounded-circle" width="10%" src="Resources\\Images\\ImageLogin.jpg">
+            
+                <span class="text-black-10">Admin@gmail.com</span>
+            </div>
+           
+        </div>
+        <div class="game">
+            <div class="p-3 py-5">
+                <div class="d-flex justify-content-between align-items-left mb-3">
+                <div class="mt-5 text-center ml-auto"><button class="btn btn-primary profile-button" type="button" id="saveProfile">Save Profile</button></div>
+
+                </div>
+                <div class="row mt-2">
+                    <div class="col-md-6 p-1"><label>Primeiro nome</label><input type="text" class="form-control" placeholder="Ruben" value=""></div>
+                    <div class="col-md-6 p-1"><label>Ultimo nome</label><input type="text" class="form-control" value="" placeholder="Amaro"></div>
+                    <div class="col-md-6 p-1"><label>Genero</label><input type="text" class="form-control" value="" placeholder="Masculino"></div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-12 p-1"><label>Numero de telemovel</label><input type="text" class="form-control" placeholder="xxx-xxx-xxx" value=""></div>
+                    <div class="col-md-12 p-1"><label>Codigo Postal</label><input type="text" class="form-control" placeholder="xxxx-xxx" value=""></div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-12 p-1"><label>Endereço</label><input type="text" class="form-control" placeholder="" value=""></div>
+                    <div class="col-md-6 p-1"><label>Cidade</label><input type="text" class="form-control" placeholder="country" value=""></div>
+                    <div class="col-md-6 p-1"><label>Região</label><input type="text" class="form-control" value="" placeholder="state"></div>
+                </div>
+            </div>
+
+            
+        </div>
+        
+    </div>
+</div>
+<script>
+     var saveProfile = document.getElementById("saveProfile");
+     var FormSign = document.getElementById("Signin_Form");
+
+    // Accessing form controls and retrieving values
+    var new_username = FormSign.elements["new_username"].value;
+    var new_password = FormSign.elements["new_password"].value;
+    var new_password_confirm = FormSign.elements["new_password_confirm"].value;
+
+     saveProfile.onclick = function () {
+
+        console.log("profile save with following data")
+    };
+</script>
+</html>

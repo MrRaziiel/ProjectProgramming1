@@ -1,29 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="Style/ProfileStyle.Css">
+    <title>Game Store</title>
     <style>
-    .container {
-    border: 1px solid #ddd;
-    padding: 10px;
-    margin: 10px;
-    background-color: #fff;
-    border-radius: 5px;
-    display: inline-block;
-    width: 200px;
-    text-align: center;
-}
 
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .left-section {
+            flex: 1;
+        }
+
+        .right-section {
+            flex-basis: 30%;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .countdown {
+            font-size: 24px;
+            font-weight: bold;
+            color: #e4341d;
+            margin-bottom: 20px;
+        }
+
+        .sale-propaganda {
+            text-align: center;
+            color: #000000;
+            font-size: 18px;
+            font-weight: bold;
+        }
     </style>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    
+</head>
 <body>
-    <nav class="navbar navbar-expand" >
-       
-            adasdsa 
-          
+    <div class="container">
+        <div class="left-section">
+            <h1 class="display-4">Bem-vindo à Nossa Loja de Jogos</h1>
+            <p class="lead">Descubra uma vasta coleção de jogos emocionantes. Oferecemos os melhores títulos e as últimas novidades do mundo dos games. Encontre o seu próximo jogo favorito conosco!</p>
+        </div>
 
-</nav>
+        <div class="right-section">
+            <div class="countdown">
+                <p class="lead" style="text-align: center;">Oferta Especial Termina em:</p>
+                <div id="countdownTimer" style="text-align: center;"></div>
+            </div>
 
+            <div class="sale-propaganda">
+                <p class="lead">Grande Venda! Até 50% de Desconto em Jogos Selecionados.</p>
+                <button class="btn btn-primary profile-button" type="button" id="saveProfile">JOGOS</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var saleEndDate = new Date("Jan 31, 2024 00:00:00").getTime();
+
+            var x = setInterval(function() {
+                var now = new Date().getTime();
+                var distance = saleEndDate - now;
+
+                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                document.getElementById("countdownTimer").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+                if (distance < 0) {
+                    clearInterval(x);
+                    document.getElementById("countdownTimer").innerHTML = "OFERTA ENCERRADA";
+                }
+            }, 1000);
+        });
+    </script>
 </body>
-
 </html>

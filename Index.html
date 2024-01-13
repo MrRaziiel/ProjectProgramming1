@@ -1,173 +1,294 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Raziel Game Store</title>
     <!-- Add Bootstrap CSS link -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+      }
 
-        header {
-            background-color: #333;
-            color: white;
-            padding: 1em;
-        }
+      header {
+        background-color: #333;
+        color: white;
+        padding: 1em;
+      }
 
-        nav {
-            background-color: #444;
-            text-align: center;
-        }
+      nav {
+        background-color: #444;
+        text-align: center;
+      }
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
+      nav a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+      }
 
-        nav a:hover {
-            background-color: #555;
-            border-radius: 5px;
-        }
+      nav a:hover {
+        background-color: #555;
+        border-radius: 5px;
+      }
 
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 1em;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
+      footer {
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 1em;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+      }
 
-        /* Additional Bootstrap styles for modals */
-        .modal-content {
-            background-color: #fefefe;
-            margin: 5% auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 80%;
-        }
-        .container {
-        margin-left: 0!important;
-        margin-right: 0!important;
-        }
-        
+      /* Additional Bootstrap styles for modals */
+      .modal-content {
+        background-color: #fefefe;
+        margin: 5% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+      }
+      .container {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <header class="bg-dark text-white">
-        <div class="row">
-            <div class="col"  >
-                <nav class="navbar navbar-expand-lg navbar-dark bg-dark" >
-                        <img src= "Resources\Images\Logo.png" width="100" height="100" alt="Round Image" class="rounded-circle shadow-4-strong img-fluid" alt="avatar1" style="float: right;">
-                </nav>
-                
-            </div>
-            <div class="col">
-                <h1 style="text-align:center;" >Raziel Game Store</h1>
-            </div>
-            <div class="col" style="text-align:right;">
-                <a class="navbar-brand" href="#" id="loginBtn">Login</a>
-                <a class="navbar-brand" href="#" id="signupBtn">Register</a>
-            </div>
-        
-        </div>
-    </header>
-    
-
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark" >
+      <div class="row">
+        <div class="col">
+          <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
-              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
                 <span class="navbar-toggler-icon"></span>
               </button>
-        
-              <div class="collapse navbar-collapse" id="navbarNavDropdown" >
-                    <ul class="navbar-nav">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
-                                <span class="navbar-toggler-icon" style="float: left;"></span>
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="javascript:void(0);" onclick="loadContent('Welcome')">Home</a>
-                                <a class="dropdown-item" href="javascript:void(0);" onclick="loadContent('Games')">GAMES</a>
-                                <a class="dropdown-item" href="#">CART</a>
-                                <a class="dropdown-item" href="#">Contact</a>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
 
-    </nav>
-        <iframe id="content" class="content" style="width: 100%; height: 100vh;" frameborder="0" src="Welcome.html"></iframe>
+              <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    
+                  <li class="nav-item dropdown">
+                    <a
+                      class="nav-link dropdown-toggle"
+                      href="#"
+                      id="navbarDropdownMenuLink"
+                      role="button"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      <span
+                        class="navbar-toggler-icon"
+                        style="float: left"
+                      ></span>
+                    </a>
+                    <div
+                      class="dropdown-menu"
+                      aria-labelledby="navbarDropdownMenuLink"
+                    >
+                      <a
+                        class="dropdown-item"
+                        href="javascript:void(0);"
+                        onclick="loadContent('Welcome')"
+                        >PAGINA INCIAL</a
+                      >
+                      <a
+                        class="dropdown-item"
+                        href="javascript:void(0);"
+                        onclick="loadContent('Games')"
+                        >JOGOS</a
+                      >
+                      <a
+                        class="dropdown-item"
+                        href="javascript:void(0);"
+                        onclick="loadContent('Games')"
+                        >CONTACTOS</a
+                      >
+                    </div>
+                  </li>
+                </ul>
+                <img
+                  src="Resources\Images\Logo.png"
+                  width="18%"
+                  height="18%"
+                  alt="Round Image"
+                  class="rounded-circle shadow-4-strong img-fluid"
+                  alt="avatar1"
+                  style="float: right"
+                />
+              </div>
+            </div>
+          </nav>
+        </div>
+        <div class="col">
+          <h1 style="text-align: center">Raziel Game Store</h1>
+        </div>
+        <div class="col" style="text-align: right">
+            <a class="navbar-brand" href="#" id="loginBtn">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18%"
+                  height="15%"
+                  fill="currentColor"
+                  class="bi bi-person-down"
+                  viewBox="0 0 16 16"
+                >
+                  <path d="M12.5 9a3.5 3.5 0 1 1 0 7 3.5 3.5 0 0 1 0-7m.354 5.854 1.5-1.5a.5.5 0 0 0-.708-.708l-.646.647V10.5a.5.5 0 0 0-1 0v2.793l-.646-.647a.5.5 0 0 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0M8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4"/>
+                  <path d="M8.256 14a4.5 4.5 0 0 1-.229-1.004H3c.001-.246.154-.986.832-1.664C4.484 10.68 5.711 10 8 10q.39 0 .74.025c.226-.341.496-.65.804-.918Q8.844 9.002 8 9c-5 0-6 3-6 4s1 1 1 1z"/>
+                </svg>
+              </a>
+        </div>
+      </div>
+    </header>
+
+    <iframe
+      id="content"
+      class="content"
+      style="width: 100%; height: 100vh"
+      frameborder="0"
+      src="Welcome.html"
+    ></iframe>
 
     <footer class="bg-dark text-white">
-        <p>&copy; 2024 Raziel Game Store. All rights reserved.</p>
+      <p>&copy; 2024 Raziel Game Store. All rights reserved.</p>
     </footer>
 
     <!-- Login Modal -->
     <div class="modal" id="loginModal">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Login</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="form-group">
-                            <label for="username">Username:</label>
-                            <input type="text" class="form-control" id="username" name="username" required>
-                        </div>
+        
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Iniciar Sessão</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          
+          <div class="modal-body">
+            <div class= "pb-2">Não tem conta? <a class="" href="#" id="signupBtn"> Registar </a></div>
+            <div>
+                <form id="Login_Form">
+              <div class="form-group">
+                <label for="username">Endereço de email:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="email_username"
+                  name="username"
+                  required
+                />
+              </div>
 
-                        <div class="form-group">
-                            <label for="password">Password:</label>
-                            <input type="password" class="form-control" id="password" name="password" required>
-                        </div>
+              <div class="form-group">
+                <label for="password">Palavra-passe:</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="password"
+                  name="password"
+                  required
+                />
+              </div>
 
-                        <button type="button" class="btn btn-primary" onclick="performLogin()">Login</button>
-                    </form>
-                </div>
-            </div>
+              <button
+                type="button"
+                class="btn btn-primary"
+                onclick="performLogin()"
+              >
+                Login
+              </button>
+            </form>
         </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- Signup Modal -->
     <div class="modal" id="signupModal">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Register</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="form-group">
-                            <label for="newUsername">New Username:</label>
-                            <input type="text" class="form-control" id="newUsername" name="newUsername" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="newPassword">New Password:</label>
-                            <input type="password" class="form-control" id="newPassword" name="newPassword" required>
-                        </div>
-
-                        <button type="button" class="btn btn-primary" onclick="performSignup()">Register</button>
-                    </form>
-                </div>
-            </div>
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Cadastre-se em Raziel Games</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class= "pb-2">Não tem conta? <a class="" href="#" id="loginBtnback"> Registar </a></div>
+            <div>
+                <form id="Signin_Form">
+                    <div class="form-group">
+                      <label for="new_email_username">Endereço de email:</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="new_email_username"
+                        name="username"
+                        required
+                      />
+                    </div>
+      
+                    <div class="form-group">
+                      <label for="new_password">Palavra-passe:</label>
+                      <input
+                        type="password"
+                        class="form-control"
+                        id="new_password"
+                        name="password"
+                        required
+                      />
+                    </div>
+                    <div class="form-group">
+                        <label for="new_password_confirm">Confirma a Palavra-passe:</label>
+                        <input
+                          type="password"
+                          class="form-control"
+                          id="new_password_confirm"
+                          name="password"
+                          required
+                        />
+                      </div>
+      
+              <button
+                type="button"
+                class="btn btn-primary"
+                onclick="performSignup()"
+              >
+                Register
+              </button>
+            </form>
+          </div>
         </div>
+      </div>
     </div>
 
     <!-- Add Bootstrap JS and jQuery links -->
@@ -176,61 +297,166 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <script>
-        // Your existing JavaScript code...
+      // Your existing JavaScript code...
 
-        // Functions to display/close modals
-        var loginModal = document.getElementById('loginModal');
-        var signupModal = document.getElementById('signupModal');
-        var loginBtn = document.getElementById('loginBtn');
-        var signupBtn = document.getElementById('signupBtn');
-        var loginClose = document.getElementById('loginClose');
-        var signupClose = document.getElementById('signupClose');
+      // Functions to display/close modals
+      var loginModal = document.getElementById("loginModal");
+      var signupModal = document.getElementById("signupModal");
+      var loginBtn = document.getElementById("loginBtn");
+      var signupBtn = document.getElementById("signupBtn");
 
-        loginBtn.onclick = function() {
-            $('#loginModal').modal('show');
+
+      loginBtn.onclick = function () {
+
+        $("#loginModal").modal("show");
+        $("#signupModal").modal("hide");
+      };
+
+      signupBtn.onclick = function () {
+        $("#loginModal").modal("hide");
+        $("#signupModal").modal("show");
+      };
+      loginBtnback.onclick = function () {
+        $("#loginModal").modal("show");
+        $("#signupModal").modal("hide");
+      };
+
+
+      // Close modals if clicked outside the modal
+      window.onclick = function (event) {
+        if (event.target == loginModal) {
+          $("#loginModal").modal("hide");
         }
 
-        signupBtn.onclick = function() {
-            $('#signupModal').modal('show');
+        if (event.target == signupModal) {
+          $("#signupModal").modal("hide");
         }
+      };
 
-        loginClose.onclick = function() {
-            $('#loginModal').modal('hide');
-        }
+      function performLogin() {
+        // Login logic here (can be sent to the backend)
+        //  Get info about the user
+            var FormLogin = document.getElementById("Login_Form");
 
-        signupClose.onclick = function() {
-            $('#signupModal').modal('hide');
-        }
+            // Accessing form controls and retrieving values
+            var email_username = FormLogin.elements["email_username"].value;
+            var password = FormLogin.elements["password"].value;
 
-        // Close modals if clicked outside the modal
-        window.onclick = function(event) {
-            if (event.target == loginModal) {
-                $('#loginModal').modal('hide');
+            // Displaying information (you can do anything you want with the information)
+
+            
+
+            if (email_username == "admin@gmail.com" && password == "admin")
+            {   
+                // Displaying information of the user in a alert, when is oficial [Remove])
+                alert("email username: " + email_username + "\nPassword: " + password);
+                $("#loginModal").modal("hide");
+                changeIcon();
             }
+            else
+            {
+                alert("WRONG username or password");
+            }
+        };
 
-            if (event.target == signupModal) {
-                $('#signupModal').modal('hide');
+        function changeIcon() {
+
+    // Create a new SVG element with a different icon
+// Replace the existing SVG creation with an image element
+var newImg = document.createElement("img");
+newImg.setAttribute("src", "Resources\\Images\\ImageLogin.jpg"); // Replace with the path to your image
+newImg.setAttribute("alt", "Round Image"); // Provide alternative text for accessibility
+newImg.setAttribute("alt", "avatar1"); // Provide alternative text for accessibility
+newImg.setAttribute("fill", "currentColor"); // Provide alternative text for accessibility
+newImg.setAttribute("class", "rounded-circle shadow-4-strong img-fluid"); // Provide alternative text for accessibility
+newImg.setAttribute("float", "right"); // Provide alternative text for accessibility
+newImg.setAttribute("width", "9%"); // Provide alternative text for accessibility
+
+
+                  
+// Create a hyperlink around the new image element
+var newLink = document.createElement("a");
+
+// Append the new image element to the hyperlink
+newLink.appendChild(newImg);
+
+// Replace the existing content of loginBtn with the new hyperlink
+loginBtn.innerHTML = '';
+loginBtn.appendChild(newLink);
+
+// Add the new action (e.g., loadContent for 'Profile') when the icon is clicked
+loginBtn.onclick = function () {
+  loadContent('Profile');
+  // Add any additional logic you need
+};
+  }
+
+    
+       
+
+
+
+      function performSignup() {
+        // Register logic here (can be sent to the backend)
+        var FormSign = document.getElementById("Signin_Form");
+
+        // Accessing form controls and retrieving values
+        var new_email_username = FormSign.elements["new_email_username"].value;
+        var new_password = FormSign.elements["new_password"].value;
+        var new_password_confirm = FormSign.elements["new_password_confirm"].value;
+        
+        if (!new_email_username || !new_password || !new_password_confirm)
+        {
+            return
+        }
+
+        // if new_password and new_password_confirm is equals
+
+        if (isValidEmail(new_email_username))
+        {
+            alert("Email is not valid" );
+
+        }   else if(!validatepassword(new_password) ) {
+            alert("THE PASSWORD requirements: \n 8 or more character;\nOne capital letter\n1 number;\n1 especial character\n" );
+
+        }else{
+            if (new_password === new_password_confirm){
+
+                alert("PARABENS + " + new_email_username + " conseguiste cadastrar!!" );
+                $("#signupModal").modal("hide");
+
+                $("#loginModal").modal("show");
+            }
+            else
+            {
+                alert("As palavras-passes não coincidem");
+
             }
         }
+        
+        
+        // if not new_password and new_password_confirm is equals 
+        function validatepassword(senha) {
+        // Pelo menos 8 caracteres, pelo menos 1 número, pelo menos 1 caractere especial, pelo menos 1 letra maiúscula
+        var regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&.])[A-Za-z\d@$!%*?&.]{8,}$/;
 
-        function performLogin() {
-            // Login logic here (can be sent to the backend)
-            alert('Login logic here');
+        return regex.test(senha);
+        }
+        function isValidEmail(email) {
+        // Regular expression for a more strict email validation
+        var emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        return emailRegex.test(email);
         }
 
-        function performSignup() {
-            // Register logic here (can be sent to the backend)
-            alert('Register logic here');
-        }
+      };
+
+      
+      function loadContent(pageName) {
+        var iframe = document.getElementById("content");
+
+        // Set the src attribute of the iframe to load the HTML content
+        iframe.src = pageName + ".html";
+      }
     </script>
-
-    <script>
-        function loadContent(pageName) {
-            var iframe = document.getElementById("content");
-
-            // Set the src attribute of the iframe to load the HTML content
-            iframe.src = pageName + ".html";
-        }
-    </script>
-</body>
+  </body>
 </html>

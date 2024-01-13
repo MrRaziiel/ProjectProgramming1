@@ -1,27 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
-    <link rel="stylesheet" href="Style/game.Css">
+    <link rel="stylesheet" href="Style/ProfileStyle.Css">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .game img {
+            width: 150px;
+            height: 150px;
+        }
+    </style>
+</head>
 <body>
-
-
-    <nav class="navbar navbar-expand" >
-        <div class="game">
-            <h2>Game 1</h2>
-            <p>Game 1 Description.</p>
-            <p>Price: $19.99</p>
-            <button class="btn btn-primary">Buy</button>
+    <nav class="navbar navbar-expand">
+        <!-- Original Game Template -->
+        <div class="game" id="gameTemplate" style="display: none;">
+            <h2>Game Title</h2>
+            <p>Game Description.</p>
+            <img src="Resources\Images\Logo.png" alt="Round Image" class="rounded" alt="avatar1" />
+            <p>PREÇO: 19.99€</p>
+            <button class="btn btn-primary" type="button">Ve mais</button>
+            <button class="btn btn-primary" type="button">COMPRA</button>
         </div>
 
-        <div class="game">
-            <h2>Game 2</h2>
-            <p>Game 2 Description.</p>
-            <p>Price: $24.99</p>
-            <button class="btn btn-primary">Buy</button>
-        </div>
+        <!-- Container for Dynamic Game Divs -->
+        <div id="gameContainer"></div>
     </nav>
-</body>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Get the template div
+            var gameTemplate = document.getElementById('gameTemplate');
+    
+            // Get the container where dynamic divs will be added
+            var gameContainer = document.getElementById('gameContainer');
+    
+            // Array of text content for each dynamic div
+            var gameData = [
+                { title: 'JOGO 1', description: 'MELHOR JOGO DE SEMPRE DE TIROS', price: '19.99€', imageUrl: 'Resources\\Images\\CS2.jpg' },
+                { title: 'JOGO 2', price: '24.99€', imageUrl: 'Resources\\Images\\Logo.png' },
+                { title: 'JOGO 3', description: 'MELHOR JOGO DE SEMPRE DE RPG', price: '24.99€', imageUrl: 'Resources\\Images\\Age_Of_Empires.jfif' },
+                { title: 'JOGO 4', description: 'MELHOR JOGO DE SEMPRE DE RPG', price: '24.99€' },
+                { title: 'JOGO 5', description: 'MELHOR JOGO DE SEMPRE DE ROGELIKE', price: '33.99€', imageUrl: 'Resources\\Images\\The_Binding_Of_Issac.jpg' },
+                // Add more game data as needed
+            ];
+           
+    
+            // Function to create a dynamic div with specified data and append it to the container
+            function createDynamicGameDiv(game) {
+                // Check if the template exists
+                if (!gameTemplate) {
+                    console.error("Game template not found.");
+                    return;
+                }
+    
+                var clonedDiv = gameTemplate.cloneNode(true);
+                clonedDiv.style.display = ''; // Make sure to display the cloned div
+    
+                // Set content for the cloned div
+                var h2Element = clonedDiv.querySelector('h2');
+                var pElements = clonedDiv.querySelectorAll('p');
+                var imgElement = clonedDiv.querySelector('img');
+                
+                if (!isNullOrUndefined(game.title) && !isNullOrUndefined(game.description) && !isNullOrUndefined(game.price) )
+                {
+                    if (h2Element) h2Element.innerText = game.title;
+                    if (pElements.length > 0) pElements[0].innerText = game.description;
+                    if (pElements.length > 1) pElements[1].innerText = 'PREÇO: ' + game.price;
+                    if (isNullOrUndefined(game.imageUrl) )
+                    {
+                        game.imageUrl ="Resources\\Images\\file_not_found.png"
+                    }
+                    
+                    if (imgElement) imgElement.src = game.imageUrl;
+                    gameContainer.appendChild(clonedDiv);
+
+                }
+
+
+            }
+            function isNullOrUndefined(inputString) {
+            return inputString === null || inputString === undefined || !isNaN(inputString);
+        }
+    
+            // Create dynamic divs with different data
+            gameData.forEach(function (game) {
+                createDynamicGameDiv(game);
+                 
+
+                })
+            });
+           
+    </script>
+    
+    
+</body>
 </html>

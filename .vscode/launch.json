@@ -8,7 +8,7 @@
             "type": "chrome",
             "request": "launch",
             "name": "Open Index.html",
-            "file": "d:\\Faculdade\\PI\\ProjectProgrammation1\\Index.html"
+            "file": "d:\\Faculdade\\ProjectProgrammation1\\Index.html"
         }
     ]
 }
